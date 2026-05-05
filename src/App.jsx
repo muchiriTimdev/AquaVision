@@ -13,6 +13,7 @@ import {
   Book,
   Download
 } from 'lucide-react';
+import { Cloud, Bug } from 'lucide-react';
 import Dashboard from './components/Dashboard';
 import SensorMonitoring from './components/SensorMonitoring';
 import IrrigationControl from './components/IrrigationControl';
@@ -22,6 +23,8 @@ import Manual from './components/Manual';
 import DataExport from './components/DataExport';
 import DataVisualization from './components/DataVisualization';
 import MobileView from './components/MobileView';
+import WeatherIntegration from './components/WeatherIntegration';
+import PestPredictionAI from './components/PestPredictionAI';
 
 function App() {
   const [activeTab, setActiveTab] = useState('dashboard');
@@ -42,6 +45,8 @@ function App() {
     { id: 'quality', label: 'Water Quality', icon: Leaf },
     { id: 'analytics', label: 'Analytics', icon: TrendingUp },
     { id: 'visualization', label: 'Visualization', icon: BarChart3 },
+    { id: 'weather', label: 'Weather', icon: Cloud },
+    { id: 'pests', label: 'Pest AI', icon: Bug },
     { id: 'manual', label: 'Manual', icon: Book },
     { id: 'export', label: 'Data Export', icon: Download },
   ];
@@ -109,6 +114,8 @@ function App() {
         {activeTab === 'visualization' && <DataVisualization />}
         {activeTab === 'quality' && <WaterQuality />}
         {activeTab === 'analytics' && <Analytics />}
+        {activeTab === 'weather' && <WeatherIntegration />}
+        {activeTab === 'pests' && <PestPredictionAI />}
         {activeTab === 'manual' && <Manual />}
         {activeTab === 'export' && <DataExport />}
       </main>
